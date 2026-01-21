@@ -1,0 +1,13 @@
+
+th {background-color: rgb(161, 94, 52); border: 2px solid black; 
+    padding-top: 10px; padding-bottom: 10px; padding-right: 30px; padding-left: 30px } 
+/* tr {background-color: aquamarine; border: 2px solid black;
+    padding-top: 10px; padding-bottom: 10px; padding-right: 30px; padding-left: 30px } */
+td {background-color: aquamarine; border: 2px solid black;
+    padding-top: 10px; padding-bottom: 10px; padding-right: 30px; padding-left: 30px }
+form {border-radius: 5px; background-color: rgb(227, 232, 232); padding: 15px; width: 30%}
+input {display: inline-block; width: 100%; margin: 5px}
+input[type=submit] {background-color: rgba(18, 196, 18, 0.5)}
+input[type=submit]:hover {background-color: rgba(8, 154, 8, 0.5)}
+/* a {background-color: rgba(183, 219, 244, 0.75); border-radius: 3px; padding: 0.5px;
+    margin-bottom: 5px;} */
