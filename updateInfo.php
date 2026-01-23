@@ -22,38 +22,11 @@ if (isset($_GET['msg'])) {
             break;
     }
 }
-if (isset($_GET['userId'])) {
-    $userId = $_GET["userId"];
-}
-else {
-    $userId = $_POST['userId'];
-}
 
-if (isset($_GET['accessKey'])) {
-    $accessKey = $_GET["accessKey"];
-}
-
-if (isset($_GET['emailAddr'])) {
-    $emailAddr = $_GET["emailAddr"];
-}
-else {
-    $emailAddr = $_POST['emailAddr'];
-}
-
-$dashqry = "SELECT emailAddress FROm users WHERE id=?";
-$dashqry = $conn->prepare($dashqry);
-
-$dashqry->bind_param("i", $userId);
-$dashqry->execute();
-$dashqry->store_result();
-$dashqry->bind_result($emailAddr);
-
-while($dashqry->fetch()) {
+session_start();
 ?>
-<a href="dashBoard.php?emailAddr=<?=$emailAddr?>&accessKey=<?=$accessKey?>">Back to Dashboard<br> </a>
-<?php
-}
-?>
+<a href="dashBoard.php">Back to Dashboard<br> </a>
+
 <table> 
     <tr>
         <th>ID</th>
@@ -71,21 +44,21 @@ while($dashqry->fetch()) {
     $query = "SELECT id, accessKey, firstName, lastName, emailAddress From users WHERE id=?";
     $query = $conn->prepare($query);
 
-    $query->bind_param("i", $userId);
+    $query->bind_param("i", $_SESSION["userId"]);
     $query->execute();
     $query->store_result();
 
     $query->bind_result($userId, $userKey, $userFName, $userLName, $userEmail);
 
         while ($query->fetch()) {
-            if($accessKey == 1) {
+            if( $_SESSION["accessKey"] == 1) {
 ?>
         <tr> 
             <td> <?php echo $userId ?> </td>
 
             <td> <?php echo $userKey ?> </td>
 
-            <form style="all: unset;" action="updateInfoConfig.php?userId=<?=$userId?>&accessKey=<?=$accessKey?>" method="post">
+            <form style="all: unset;" action="updateInfoConfig.php" method="post">
             <input type="hidden" name="userId" value="<?php=$userId?>" >
 
             <td> <input type="text" id="firstName" placeholder="<?=$userFName ?>" value="<?=$userFName ?>" pattern="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z-']+$" name="firstName" required> </td>
@@ -94,7 +67,7 @@ while($dashqry->fetch()) {
 
             <td> <input type="email" id="emailAddress" placeholder="<?=$userEmail ?>" value="<?=$userEmail ?>" name="emailAddress" required> </td>
             
-            <td> <button type="submit"  name="userID" value="<?= $userId ?>" >Update Information</button> </form> </td>
+            <td> <button type="submit"  name="updateInfo" value="<?= $userId ?>" >Update Information</button> </form> </td>
 
            <!-- <td> <form style="all: unset;" action="newPassConfig.php?userId=<?=$userId?>" method="post">
             <input type="hidden" name="userId" value="<?php=$userId?>" >
@@ -108,11 +81,11 @@ while($dashqry->fetch()) {
 <?php
         }
     }
-             if($accessKey == 2) {
+             if($_SESSION["accessKey"] == 2) {
  ?>
              <td> <?php echo $userId ?> </td>
 
-            <form style="all: unset;" action="updateInfoAdminConfig.php?userId=<?=$userId?>&accessKey=<?=$accessKey?>" method="post">
+            <form style="all: unset;" action="updateInfoAdminConfig.php" method="post">
             <input type="hidden" name="userId" value="<?php=$userId?>">
 
             <td> <input type="integer" id="userKey" placeholder="<?=$userKey ?>" value="<?=$userKey ?>" name="userKey" requires> </td>
@@ -123,7 +96,7 @@ while($dashqry->fetch()) {
 
             <td> <input type="email" id="emailAddress" placeholder="<?=$userEmail ?>" value="<?=$userEmail ?>" name="emailAddress" required> </td>
             
-            <td> <button type="submit"  name="userID" value="<?= $userId ?>" >Update Information</button> </form> </td>
+            <td> <button type="submit"  name="updateInfoAdmin" value="<?= $userId ?>" >Update Information</button> </form> </td>
 
             <!-- <td> <form style="all: unset;" action="newPassConfig.php?userId=<?=$userId?>" method="post">
             <input type="hidden" name="userId" value="<?php=$userId?>" >

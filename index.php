@@ -22,6 +22,9 @@ if (isset($_GET['msg'])) {
         case 14:
             echo $MSG_14;
             break;
+        case 15:
+            echo $MSG_15;
+            break;
         default:
             echo $MSG_1;
             break;

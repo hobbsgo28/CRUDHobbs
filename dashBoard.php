@@ -25,15 +25,8 @@ if (isset($_GET['msg'])) {
     }
 }
 ?>
-<a href="index.php">Logout <br></a>
-<?php
-
-if (isset($_GET['emailAddr'])) {
-    $emailAddr = $_GET["emailAddr"];
-}
-else {
-    $emailAddr = $_POST['emailAddr'];
-}
+<a href="logoutConfig.php">Logout <br></a>
+<?php    //TODO clear session variables on logout
 
 ?>
 
@@ -49,9 +42,11 @@ else {
     </tr>
 
 <?php
+    session_start(); 
+
     $accessqry = "SELECT accessKey FROM users WHERE emailAddress=?";
     $accessqry = $conn->prepare($accessqry);
-    $accessqry->bind_param("s", $emailAddr);
+    $accessqry->bind_param("s", $_SESSION["emailAddr"]);
     $accessqry->execute();
 
     $accessqry->store_result();
@@ -66,7 +61,7 @@ while ($accessqry->fetch()) {
     if($accessKey == 1) {
         $usersqry = "SELECT id, accessKey, firstName, lastName, emailAddress FROM users WHERE emailAddress=?";
         $usersqry = $conn->prepare($usersqry);
-        $usersqry->bind_param("s", $emailAddr);
+        $usersqry->bind_param("s", $_SESSION["emailAddr"]);
         
         $usersqry->execute();
         $usersqry->store_result();
@@ -81,7 +76,7 @@ while ($accessqry->fetch()) {
                 <td> <?php echo $userFName  ?> </td>
                 <td> <?php echo $userLName  ?> </td>
                 <td> <?php echo $userEmail ?> </td>
-                <td> <form style="all: unset;" action="updateInfo.php?accessKey=<?=$accessKey?>" method="post">
+                <td> <form style="all: unset;" action="updateInfo.php" method="post">
                     <button type="submit" name="userId" value="<?= $userId ?>" >Update Information</button> </form> </td>
                 <td> <form style="all: unset;" action="removeAcct.php?userId=<?=$userId?>&accessKey=<?=$accessKey?>" method="post">
                     <button type="submit" name="userId" value="<?= $userId ?>" >Delete Account</button> </form> </td>
@@ -108,7 +103,7 @@ while ($accessqry->fetch()) {
                 <td> <?php echo $userFName  ?> </td>
                 <td> <?php echo $userLName  ?> </td>
                 <td> <?php echo $userEmail ?> </td>
-                <td> <form style="all: unset;" action="updateInfoAdmin.php?accessKey=<?=$accessKey?>&emailAddr=<?=$emailAddr?>" method="post">
+                <td> <form style="all: unset;" action="updateInfo.php" method="post">
                     <button type="submit" name="userId" value="<?= $userId ?>" >Update Information</button> </form> </td>
                 <td> <form style="all: unset;" action="removeAcct.php?userId=<?=$userId?>&emailAddr=<?=$emailAddr?>&accessKey=<?=$accessKey?>" method="post">
                     <button type="submit" name="userId" value="<?= $userId ?>" >Delete Account</button> </form> </td>
@@ -119,9 +114,9 @@ while ($accessqry->fetch()) {
     }
 }
 ?>
-
+<!--
 <a href="changePass.php">Change Password Here <br> </a>
 <a href="deleteAcct.php">Delete Account Here <br> </a>
-
+-->
 </body>
 </html>

@@ -1,16 +1,7 @@
 <?php
 include("connection.php");
 
-if (isset($_GET['userId'])) {
-    $userId = $_GET["userId"];
-}
-else {
-    $userId = $_POST['userId'];
-}
-if (isset($_GET['accessKey'])) {
-    $accessKey = $_GET["accessKey"];
-}
-
+session_start();
 if (isset($_POST["updateInfo"])) {
 
     $fName = $_POST["firstName"];
@@ -20,10 +11,10 @@ if (isset($_POST["updateInfo"])) {
     $query = "UPDATE users SET firstName=?, lastName=?, emailAddress=? WHERE id=?";
     $query = $conn->prepare($query);
 
-    $query->bind_param("sssi", $fName, $lName, $emailAddr, $userId);
+    $query->bind_param("sssi", $fName, $lName, $emailAddr, $_SESSION["userId"]);
     $query->execute();
 
-    header("Location: updateInfo.php?msg=12&userId=$userId&accessKey=$accessKey");
+    header("Location: updateInfo.php?msg=12");
 }
 else {
     header("Location: index.php?msg=14");

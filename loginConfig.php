@@ -20,8 +20,20 @@ if(isset($_POST["login"])){
     $query->fetch();
 
     if (password_verify($pass, $storedHash)) {
+        session_start();
+        $query = "SELECT id, accessKey FROM users WHERE emailAddress=?";
+        $query = $conn->prepare($query);
+        $query->bind_param("s", $email);
+        $query->execute();
 
-        header("Location: dashBoard.php?msg=4&emailAddr=$email");
+        $query->bind_result($id, $accessKey);
+        $query->fetch();        
+
+        $_SESSION["emailAddr"] = $email;
+        $_SESSION["userId"] = $id;
+        $_SESSION["accessKey"] = $accessKey;        
+
+        header("Location: dashBoard.php?msg=4");
     }
     else {
     header("Location: login.php?msg=5");
