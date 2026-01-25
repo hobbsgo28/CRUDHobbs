@@ -1,6 +1,12 @@
 <html>
     <head> <link rel="stylesheet" href="style.css"> </head>
-
+<div class="header">
+  <a href="index.php">CRUD</a>
+  <div class="header-right">
+    <a href="dashboard.php">Dashboard</a>
+    <a href="login.php">Login</a>
+  </div>
+</div>
 <body>
     <h2> Register </h2>
 <a href="login.php">Login Here <br></a>

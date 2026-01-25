@@ -1,5 +1,11 @@
 <html>
     <head> <link rel="stylesheet" href="style.css"> </head>
+    <div class="header">
+  <a href="index.php">CRUD</a>
+  <div class="header-right">
+    <a href="logoutConfig.php">Logout</a>
+  </div>
+</div>
 <body>
 
 <h1> Dashboard </h1>

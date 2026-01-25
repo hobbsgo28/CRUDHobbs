@@ -1,9 +1,15 @@
 <html>
     <head> <link rel="stylesheet" href="style.css"> </head>
+    <div class="header">
+  <a href="index.php">CRUD</a>
+  <div class="header-right">
+    <a href="dashboard.php">Dashboard</a>
+    <a href="logoutConfig.php">Logout</a>
+  </div>
+</div>
 <body>
 
 <?php
-
 include("globals.php");
 
 if (isset($_GET['msg'])) {

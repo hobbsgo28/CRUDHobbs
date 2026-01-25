@@ -1,5 +1,12 @@
 <html>
     <head> <link rel="stylesheet" href="style.css"> </head>
+    <div class="header">
+  <a href="index.php">CRUD</a>
+  <div class="header-right">
+    <a href="index.php">Welcome Page</a>
+    <a href="register.php">Register</a>
+  </div>
+</div>
 <body>
 
 <?php
