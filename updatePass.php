@@ -28,31 +28,12 @@ if (isset($_GET['msg'])) {
             break;
     }
 }
-
-if (isset($_GET['emailAddr'])) {
-    $emailAddr = $_GET["emailAddr"];
-}
-else {
-    $emailAddr = $_POST['emailAddr']; // TODO bug
-}
-?>
-
-<a href="dashBoard.php?emailAddr=<?=$emailAddr?>">Back to Dashboard<br></a>
-<?php
-
-if (isset($_GET['userId'])) {
-    $userId = $_GET["userId"];
-}
-else {
-    $userId = $_POST["userId"];
-}
-
-
-
-//echo $userId;
+if (isset($_POST["updateInfo"])) {
+    $userId = $_POST[""]
 
 ?>
-<!-- <a href="updateInfo.php?userId=<?$userId?>">Back to Update Page<br></a> -->
+<a href="updateInfo.php">Back to Update Page<br></a>
+
 
 <table> 
     <tr> 
@@ -62,7 +43,7 @@ else {
         <th> </th>
     </tr>
     <tr>
-<form action="updatePassConfig.php?userId=<?=$userId?>" method="POST">
+<form action="updatePassConfig.php" method="POST">
     <td> <input type="hidden" name="userId" value="<?php=$userId?>" > <?php echo $userId ?>  </td>
     <td> <input type="password" name="pass" placeholder="abcABC123!@#" id="pass"
     pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$" required> </td>
@@ -74,6 +55,10 @@ else {
     </tr>
 
 <?php
+}
+else {
+    header("Location: index.php?msg=14");
+}
 //header("Location: updateInfo.php?msg=12&userId=$userId");
 
 ?>

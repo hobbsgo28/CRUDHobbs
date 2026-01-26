@@ -2,18 +2,8 @@
 <body>
 
 <?php
-
+session_start();
 include("connection.php");
-
-if (isset($_GET['userId'])) {
-    $userId = $_GET["userId"];
-}
-else {
-    $userId = $_POST['userId'];
-}
-if (isset($_GET['accessKey'])) {
-    $accessKey = $_GET["accessKey"];
-}
 
 $query = "SELECT userPassword FROM users WHERE id=?";
 $query = $conn->prepare($query);
@@ -23,7 +13,7 @@ if(isset($_POST["updatePass"])){
     $pass = $_POST["pass"];
     $newPass = $_POST["newPass"];
 
-    $query->bind_param("i", $userId);
+    $query->bind_param("i", $_SESSION["userId"]);
     $query->execute();
 
     $query->bind_result($storedHash);
@@ -36,13 +26,13 @@ if(isset($_POST["updatePass"])){
 
         $newHashPass = password_hash($newPass, PASSWORD_BCRYPT);
 
-        $cpqry->bind_param("si", $newHashPass, $userId);
+        $cpqry->bind_param("si", $newHashPass, $_SESSION["userId"]);
         $cpqry -> execute();
 
-            header("Location: updateInfo.php?msg=8&userId=$userId&accessKey=$accessKey");
+            header("Location: updateInfo.php?msg=8");
     }
 else {
-    header("Location: updatePass.php?msg=9&userId=$userId&accessKey=$accessKey");
+    header("Location: updatePass.php?msg=9");
     }
 }
 else {

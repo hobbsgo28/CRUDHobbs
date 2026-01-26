@@ -29,6 +29,10 @@ if (isset($_GET['msg'])) {
             break;
     }
 }
+if (isset($_GET["userId"])){
+    $userId = $_GET["userId"];
+}
+
 
 session_start();
 ?>
@@ -51,7 +55,7 @@ session_start();
     $query = "SELECT id, accessKey, firstName, lastName, emailAddress From users WHERE id=?";
     $query = $conn->prepare($query);
 
-    $query->bind_param("i", $_SESSION["userId"]);
+    $query->bind_param("i", $userId);
     $query->execute();
     $query->store_result();
 

@@ -8,15 +8,8 @@ else {
     $userId = $_POST['userId'];
 }
 
-if (isset($_GET['emailAddr'])) {
-    $emailAddr = $_GET["emailAddr"];
-}
-
-if(isset($_GET['accessKey'])){
-    $accessKey = $_GET["accessKey"];
-}
 ?>
-<a href="dashBoard.php?emailAddr=<?=$emailAddr?>&accessKey=<?=$accessKey?>">Back to Dashboard<br> </a>
+<a href="dashBoard.php">Back to Dashboard<br> </a>
 <?php
 
 $usersqry = "SELECT firstName, lastName From users WHERE id=?";
@@ -32,5 +25,5 @@ $usersqry->bind_result($thisFName, $thisLName);
 <form action="removeAcctConfig.php?userId=<?=$userId?>" method="post">
     <button type="submit" name="removeAcct" value="<?= $userId ?>">Confirm</button> </form>
 
-<form action="dashBoard.php?emailAddr=<?=$emailAddr?>&accessKey=<?=$accessKey?>" method="post">
+<form action="dashBoard.php" method="post">
     <button type="submit" name="userId" value="<?= $userId ?>" >Back to Dashboard</button> </form>
