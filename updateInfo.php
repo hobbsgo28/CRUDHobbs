@@ -9,8 +9,8 @@
 include("globals.php");
 include("connection.php");
 
-if (isset($_GET['msg'])) {
-    switch ($_GET['msg']) {
+if (isset($_GET["msg"])) {
+    switch ($_GET["msg"]) {
         case 8:
             echo $MSG_8;
             break;

@@ -15,8 +15,8 @@
 <?php
 include("globals.php");
 
-if (isset($_GET['msg'])) {
-    switch ($_GET['msg']) {
+if (isset($_GET["msg"])) {
+    switch ($_GET["msg"]) {
         case 4:
             echo $MSG_4;
             break;

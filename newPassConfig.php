@@ -5,13 +5,13 @@
 
 include("connection.php");
 
-if (isset($_GET['userId'])) {
+if (isset($_GET["userId"])) {
     $userId = $_GET["userId"];
 }
 else {
-    $userId = $_POST['userId'];
+    $userId = $_POST["userId"];
 }
-if (isset($_GET['accessKey'])) {
+if (isset($_GET["accessKey"])) {
     $accessKey = $_GET["accessKey"];
 }
 

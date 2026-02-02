@@ -5,8 +5,8 @@
 
 include("globals.php");
 
-if (isset($_GET['msg'])) {
-    switch ($_GET['msg']) {
+if (isset($_GET["msg"])) {
+    switch ($_GET["msg"]) {
         case 9:
             echo $MSG_9;
             break;
@@ -27,19 +27,14 @@ if (isset($_GET['msg'])) {
 <a href="dashBoard.php">Back to Dashboard<br></a>
 <?php
 
-if (isset($_GET['userId'])) {
+if (isset($_GET["userId"])) {
     $userId = $_GET["userId"];
 }
 else {
     $userId = $_POST["userId"];
 }
 
-
-
-//echo $userId;
-
 ?>
-<!-- <a href="updateInfo.php?userId=<?$userId?>">Back to Update Page<br></a> -->
 
 <table> 
     <tr> 
@@ -58,7 +53,6 @@ else {
     </tr>
 
 <?php
-//header("Location: updateInfo.php?msg=12&userId=$userId");
 
 ?>
 </body>

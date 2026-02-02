@@ -8,8 +8,8 @@
 <?php
 include("globals.php");
 
-if (isset($_GET['msg'])) {
-    switch ($_GET['msg']) {
+if (isset($_GET["msg"])) {
+    switch ($_GET["msg"]) {
         case 2:
             echo $MSG_2;
             break;
@@ -33,7 +33,6 @@ if (isset($_GET['msg'])) {
 ?>
 
 <h2> Login </h2>
-<a href="register.php">Register Here <br></a>
 <br>
 
 <form action="loginConfig.php" method="POST">

@@ -5,14 +5,12 @@
     include("header.php");
     ?>
     <h2> Register </h2>
-<a href="login.php">Login Here <br></a>
 <br>
 
 <?php
 include("globals.php");
-
-if (isset($_GET['msg'])) {
-    switch ($_GET['msg']) {
+if (isset($_GET["msg"])) {
+    switch ($_GET["msg"]) {
         case 3:
             echo $MSG_3;
             break;

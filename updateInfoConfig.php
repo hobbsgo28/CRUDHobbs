@@ -1,17 +1,17 @@
 <?php
 include("connection.php");
 
-if (isset($_GET['userId'])) {
+if (isset($_GET["userId"])) {
     $userId = $_GET["userId"];
     echo $userId;
 }
 else {
-    $userId = $_POST['userId'];
+    $userId = $_POST["userId"];
     echo $userId;
 }
 
 if (isset($_POST["updateInfo"])) {
-    $userId = $_POST['userId'];
+    $userId = $_POST["userId"];
     $fName = $_POST["firstName"];
     $lName = $_POST["lastName"];
     $emailAddr = $_POST["emailAddress"];

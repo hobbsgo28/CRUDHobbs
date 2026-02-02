@@ -7,11 +7,11 @@
 ?>
 
 <?php
-if (isset($_GET['userId'])) {
+if (isset($_GET["userId"])) {
     $userId = $_GET["userId"];
 }
 else {
-    $userId = $_POST['userId'];
+    $userId = $_POST["userId"];
 }
 
 ?>
