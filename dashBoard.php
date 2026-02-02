@@ -93,16 +93,11 @@ else if($_SESSION["accessKey"] == 2){
             <td> <?php echo $userEmail ?> </td>
             <td> <form style="all: unset;" action="updateInfo.php?userId=<?=$userId?>" method="post">
                 <button type="submit" name="userId" value="<?= $userId ?>" >Update Information</button> </form> </td>
-            <td> <form style="all: unset;" action="deleteConfirm.php?userId=<?=$userId?>" method="post">
-                <button onclick="deleteConfirm.php" id="open-popup">Delete Account</buton> </form> </td>
+            <td> <form style="all: unset;" action="removeAcct.php?userId=<?=$userId?>" method="post">
+                <button type="submit" name="userId" value="<?= $userId ?>" >Delete Account</button> </form> </td>
         </tr>
 
-        <script>
-const popup = document.getElementById('popup');
-document.getElementById('open-popup').onclick = () => popup.style.display = 'flex';
-document.getElementById('confirm').onclick = () => { alert('Confirmed!'); popup.style.display = 'none'; };
-document.getElementById('cancel').onclick = () => popup.style.display = 'none';
-</script>
+        
 <?php   
 
         }
