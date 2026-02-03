@@ -32,7 +32,7 @@ if (isset($_GET["userId"])){
 // if (isset($_POST["updateInfo"])){
 session_start();
 ?>
-<a href="dashBoard.php">Back to Dashboard<br> </a>
+<a href="dashboard.php">Back to Dashboard<br> </a>
 
 <table> 
     <tr>

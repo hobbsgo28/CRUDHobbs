@@ -28,7 +28,7 @@ if (isset($_GET["msg"])) {
     }
 }
 ?>
-<a href="logoutConfig.php">Logout <br></a>
+<!-- <a href="logoutConfig.php">Logout <br></a> -->
 <?php
 
 ?>

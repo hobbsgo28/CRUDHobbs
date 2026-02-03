@@ -25,7 +25,7 @@ if ($currentPage == "register.php"){
   <a href="login.php">Login</a>
   <?php
 }
-if ($currentPage == "dashBoard.php"){
+if ($currentPage == "dashboard.php"){
   ?>
   <a href="logoutConfig.php">Logout</a>
   <?php

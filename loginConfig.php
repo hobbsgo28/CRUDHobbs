@@ -32,7 +32,7 @@ if(isset($_POST["login"])){
         $_SESSION["userId"] = $id;
         $_SESSION["accessKey"] = $accessKey;        
 
-        header("Location: dashBoard.php?msg=4");
+        header("Location: dashboard.php?msg=4");
     }
     else {
     header("Location: login.php?msg=5");

@@ -15,10 +15,10 @@ if(isset($_POST["removeAcct"])){
     $daqry->execute();
 
     if ($daqry->execute()){
-        header("Location: dashBoard.php?msg=6&userId=$userId");
+        header("Location: dashboard.php?msg=6&userId=$userId");
     }
     else {
-        header("Location: dashBoard.php?msg=7&userId=$userId");
+        header("Location: dashboard.php?msg=7&userId=$userId");
     }
 }
 else {

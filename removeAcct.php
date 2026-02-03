@@ -27,7 +27,7 @@ $usersqry->bind_result($thisFName, $thisLName);
 <form style="all: unset;" action="removeAcctConfig.php?userId=<?=$userId?>" method="post">
     <button type="submit" name="removeAcct" value="<?= $userId ?>">Confirm</button> </form> <br>
 
-<form style="all: unset;" action="dashBoard.php" method="post">
+<form style="all: unset;" action="dashboard.php" method="post">
     <button type="submit" name="userId" value="<?= $userId ?>" >Back to Dashboard</button> </form> <br>
 
 </head>
