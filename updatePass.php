@@ -1,5 +1,8 @@
 <html>
     <head> <link rel="stylesheet" href="style.css"> </head>
+    <?php 
+    include("header.php");
+    ?>
 <body>
 <?php
 
@@ -21,11 +24,6 @@ if (isset($_GET["msg"])) {
             break;
     }
 }
-
-?>
-
-<a href="dashBoard.php">Back to Dashboard<br></a>
-<?php
 
 if (isset($_GET["userId"])) {
     $userId = $_GET["userId"];

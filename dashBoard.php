@@ -65,7 +65,7 @@ if($_SESSION["accessKey"] == 1) {
             <td> <?php echo $userLName  ?> </td>
             <td> <?php echo $userEmail ?> </td>
             <td> <form style="all: unset;" action="updateInfo.php" method="post">
-                <button type="submit" name="userId" value="<?= $userId ?>" >Update Information</button> </form> </td>
+                <button type="submit" name="updateInfo" >Update Information</button> </form> </td>
             <td> <form style="all: unset;" action="removeAcct.php?userId=<?=$userId?>" method="post">
                 <button type="submit" name="userId" value="<?= $userId ?>" >Delete Account</button> </form> </td>
 

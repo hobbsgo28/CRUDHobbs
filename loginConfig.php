@@ -2,7 +2,6 @@
 <body>
 
 <?php
-//TODO create a session
 include("connection.php");
 
 $query = "SELECT userPassword FROM users WHERE emailAddress=?";

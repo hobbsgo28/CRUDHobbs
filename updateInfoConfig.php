@@ -23,7 +23,7 @@ if (isset($_POST["updateInfo"])) {
     $query->bind_param("sssi", $fName, $lName, $emailAddr, $userId);
     $query->execute();
 
-    //header("Location: updateInfo.php?msg=12&userId=$userId");
+    header("Location: updateInfo.php?msg=12&userId=$userId");
 }
 else {
     header("Location: index.php?msg=14");
