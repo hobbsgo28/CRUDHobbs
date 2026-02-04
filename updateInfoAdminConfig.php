@@ -1,8 +1,8 @@
 <?php
 include("connection.php");
 
-if(isset($_POST["updateInfoAdmin"])) {
-    $userId = $_POST['userId'];
+if(isset($_POST["updateInfo"])) {
+    $userId = $_POST["userId"];
     $userKey = $_POST["userKey"];
     $fName = $_POST["firstName"];
     $lName = $_POST["lastName"];

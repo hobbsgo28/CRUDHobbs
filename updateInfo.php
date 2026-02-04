@@ -29,86 +29,71 @@ if (isset($_GET["userId"])){
     $userId = $_GET["userId"];
 }
 
-// if (isset($_POST["updateInfo"])){
-session_start();
-?>
-<a href="dashboard.php">Back to Dashboard<br> </a>
+if (isset($_POST["updateInfo"])){
+    session_start();
+    ?>
+    <a href="dashboard.php">Back to Dashboard<br> </a>
 
-<table> 
-    <tr>
-        <th>ID</th>
-        <th>Access Key</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email Address</th>
-        <th>Update Information</th>
-        <th>Password</th>
-    </tr>
-
-<?php
-
-    $query = "SELECT id, accessKey, firstName, lastName, emailAddress From users WHERE id=?";
-    $query = $conn->prepare($query);
-
-    $query->bind_param("i", $userId);
-    $query->execute();
-    $query->store_result();
-
-    $query->bind_result($userId, $userKey, $userFName, $userLName, $userEmail);
-//condense these loops
-        while ($query->fetch()) {
-            if( $_SESSION["accessKey"] == 1) {
-?>
-        <tr> 
-            <td> <?php echo $userId ?> </td>
-
-            <td> <?php echo $userKey ?> </td>
-
-            <form style="all: unset;" action="updateInfoConfig.php" method="post">
-            <input type="hidden" name="userId" value="<?php=$userId?>" >
-
-            <td> <input type="text" id="firstName" placeholder="<?=$userFName ?>" value="<?=$userFName ?>" pattern="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z-']+$" name="firstName" required> </td>
-
-            <td> <input type="text" id="lastName" placeholder="<?=$userLName ?>" value="<?=$userLName ?>" pattern="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z-']+$" name="lastName" required> </td>
-
-            <td> <input type="email" id="emailAddress" placeholder="<?=$userEmail ?>" value="<?=$userEmail ?>" name="emailAddress" required> </td>
-            
-            <td> <button type="submit"  name="updateInfo" value="<?= $userId ?>" >Update Information</button> </form> </td>
-
-            <td> <form style="all: unset;" action="updatePass.php?userId=<?=$userId?>&emailAddr=<?=$userEmail?>" method="post">
-                <button type="submit" name="updatePass" value="<?= $userId ?>" >Update Password</button> </form> </td>
-
+    <table> 
+        <tr>
+            <th>ID</th>
+            <th>Access Key</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Address</th>
+            <th>Update Information</th>
+            <th>Password</th>
         </tr>
-<?php
-        }
-    }
-             if($_SESSION["accessKey"] == 2) {
- ?>
-             <td> <?php echo $userId ?> </td>
 
-            <form style="all: unset;" action="updateInfoAdminConfig.php" method="post">
-            <input type="hidden" name="userId" value="<?=$userId?>">
+    <?php
 
-            <td> <input type="integer" id="userKey" placeholder="<?=$userKey ?>" value="<?=$userKey ?>" name="userKey" requires> </td>
+        $query = "SELECT id, accessKey, firstName, lastName, emailAddress From users WHERE id=?";
+        $query = $conn->prepare($query);
 
-            <td> <input type="text" id="firstName" placeholder="<?=$userFName ?>" value="<?=$userFName ?>" pattern="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z-']+$" name="firstName" required> </td>
+        $query->bind_param("i", $userId);
+        $query->execute();
+        $query->store_result();
 
-            <td> <input type="text" id="lastName" placeholder="<?=$userLName ?>" value="<?=$userLName ?>" pattern="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z-']+$" name="lastName" required> </td>
+        $query->bind_result($userId, $userKey, $userFName, $userLName, $userEmail);
+    //condense these loops
+    //qualify the access key value - pring 1 = user
+            while ($query->fetch()) {
+    ?>
+            <tr> 
+                <td> <?php echo $userId ?> </td>
 
-            <td> <input type="email" id="emailAddress" placeholder="<?=$userEmail ?>" value="<?=$userEmail ?>" name="emailAddress" required> </td>
-            
-            <td> <button type="submit"  name="updateInfoAdmin" value="<?= $userId ?>" >Update Information</button> </form> </td>
+                <form style="all: unset;" action="updateInfoAdminConfig.php" method="post">
+                <input type="hidden" name="userId" id="userId" value="<?=$userId?>">
+                <?php
+                if( $_SESSION["accessKey"] == 1) {
+                ?>
+                    <td> <?php echo $userKey ?> <input type="hidden" name="userKey" id="userKey" value="<?=$userKey?>" required> </td>
+    <?php }
+                if($_SESSION["accessKey"] == 2) {
+    ?>
+                    <td> <input type="integer" id="userKey" placeholder="<?=$userKey ?>" value="<?=$userKey ?>" name="userKey" requires> </td>
+    <?php 
+                }
+    ?>
 
-            <td> <form style="all: unset;" action="updatePass.php?userId=<?=$userId?>" method="post">
-                <button type="submit" name="updatePass" value="<?= $userId ?>" >Update Password</button> </form> </td>
+                <td> <input type="text" id="firstName" placeholder="<?=$userFName ?>" value="<?=$userFName ?>" pattern="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z-']+$" name="firstName" required> </td>
 
-         </tr>
-<?php
-        }
-// }
-// else {
-//     header("Location: index.php?msg=14");
-// }
+                <td> <input type="text" id="lastName" placeholder="<?=$userLName ?>" value="<?=$userLName ?>" pattern="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z-']+$" name="lastName" required> </td>
+
+                <td> <input type="email" id="emailAddress" placeholder="<?=$userEmail ?>" value="<?=$userEmail ?>" name="emailAddress" required> </td>
+                
+                <td> <button type="submit"  name="updateInfo" value="<?= $userId ?>" >Update Information</button> </form> </td>
+
+                <td> <form style="all: unset;" action="updatePass.php?userId=<?=$userId?>&emailAddr=<?=$userEmail?>" method="post">
+                    <button type="submit" name="updatePass" value="<?= $userId ?>" >Update Password</button> </form> </td>
+
+            </tr>
+    <?php
+            }
+}
+else {
+    header("Location: index.php?msg=14");
+}
 ?>
 </table>
 

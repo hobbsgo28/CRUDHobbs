@@ -10,7 +10,8 @@
 $currentPage = basename($_SERVER["PHP_SELF"]);
 
 
-//check if logged in for certian pages, if not logged in kickback to index
+//check if logged in for certian pages, if not logged in kickback to inde
+//if logged in show logout on all pages
 if ($currentPage == "index.php"){
   ?>
   <a href="login.php">Login</a>
