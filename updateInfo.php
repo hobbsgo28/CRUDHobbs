@@ -37,7 +37,7 @@ if (isset($_POST["updateInfo"])){
     <table> 
         <tr>
             <th>ID</th>
-            <th>Access Key</th>
+            <th>Access Level</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email Address</th>
@@ -55,7 +55,6 @@ if (isset($_POST["updateInfo"])){
         $query->store_result();
 
         $query->bind_result($userId, $userKey, $userFName, $userLName, $userEmail);
-    //qualify the access key value - pring 1 = user
             while ($query->fetch()) {
     ?>
             <tr> 
@@ -66,15 +65,10 @@ if (isset($_POST["updateInfo"])){
                 <?php
                 if( $_SESSION["accessKey"] == 1) {
                 ?>
-                    <td> <?php echo $userKey ?> <input type="hidden" name="userKey" id="userKey" value="<?=$userKey?>" required> </td>
-    <?php }
-                if($_SESSION["accessKey"] == 2) {
-    ?>
+                    <td> <?php echo "User" ?> <input type="hidden" name="userKey" id="userKey" value="<?=$userKey?>" required> </td>
+    <?php }     if($_SESSION["accessKey"] == 2) {       ?>
                     <td> <input type="integer" id="userKey" placeholder="<?=$userKey ?>" value="<?=$userKey ?>" name="userKey" requires> </td>
-    <?php 
-                }
-    ?>
-
+    <?php              }        ?>
                 <td> <input type="text" id="firstName" placeholder="<?=$userFName ?>" value="<?=$userFName ?>" pattern="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z-']+$" name="firstName" required> </td>
 
                 <td> <input type="text" id="lastName" placeholder="<?=$userLName ?>" value="<?=$userLName ?>" pattern="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z-']+$" name="lastName" required> </td>

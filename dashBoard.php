@@ -52,7 +52,7 @@ $usersqry->bind_result($userId, $userKey, $userFName, $userLName, $userEmail);
 <table> 
     <tr>
         <th>ID</th>
-        <th>Access Key</th>
+        <th>Access Level</th>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Email Address</th>
@@ -66,7 +66,11 @@ $usersqry->bind_result($userId, $userKey, $userFName, $userLName, $userEmail);
 ?>
         <tr> 
             <td> <?php echo $userId ?> </td>
-            <td> <?php echo $userKey ?> </td>
+            <td> <?php if ($userKey == 1){
+                echo "User";
+            } else if($userKey == 2){
+                echo "Admin";
+            } ?> </td>
             <td> <?php echo $userFName  ?> </td>
             <td> <?php echo $userLName  ?> </td>
             <td> <?php echo $userEmail ?> </td>
