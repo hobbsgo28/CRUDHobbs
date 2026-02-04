@@ -1,11 +1,6 @@
 <div class="header">
   <a href="index.php">CRUD</a>
   <div class="header-right">
-    <!-- <a href="dashboard.php">Dashboard</a>
-    <a href="logoutConfig.php">Logout</a>
-    <a href="login.php">Login</a>
-    <a href="register.php">Register</a> -->
-
 <?php
 $currentPage = basename($_SERVER["PHP_SELF"]);
 
