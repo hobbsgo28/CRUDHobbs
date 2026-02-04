@@ -55,14 +55,13 @@ if (isset($_POST["updateInfo"])){
         $query->store_result();
 
         $query->bind_result($userId, $userKey, $userFName, $userLName, $userEmail);
-    //condense these loops
     //qualify the access key value - pring 1 = user
             while ($query->fetch()) {
     ?>
             <tr> 
                 <td> <?php echo $userId ?> </td>
 
-                <form style="all: unset;" action="updateInfoAdminConfig.php" method="post">
+                <form style="all: unset;" action="updateInfoConfig.php" method="post">
                 <input type="hidden" name="userId" id="userId" value="<?=$userId?>">
                 <?php
                 if( $_SESSION["accessKey"] == 1) {
