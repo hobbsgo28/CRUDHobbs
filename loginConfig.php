@@ -31,6 +31,7 @@ if(isset($_POST["login"])){
         $_SESSION["emailAddr"] = $email;
         $_SESSION["userId"] = $id;
         $_SESSION["accessKey"] = $accessKey;        
+        $_SESSION["exists"] = TRUE;
 
         header("Location: dashboard.php?msg=4");
     }

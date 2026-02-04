@@ -1,6 +1,7 @@
 <html>
     <head> <link rel="stylesheet" href="style.css"> </head>
     <?php 
+    session_start();
     include("header.php");
     ?>
 <body>
@@ -28,10 +29,8 @@ if (isset($_GET["msg"])) {
     }
 }
 ?>
-<!-- <a href="logoutConfig.php">Logout <br></a> -->
 
 <?php
-    session_start(); 
 if($_SESSION["accessKey"] == 1) { // normal user access
     $usersqry = "SELECT id, accessKey, firstName, lastName, emailAddress FROM users WHERE emailAddress=?";
     $usersqry = $conn->prepare($usersqry);

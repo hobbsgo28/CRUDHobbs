@@ -2,6 +2,7 @@
     <head> <link rel="stylesheet" href="style.css"> </head>
 <body>
     <?php 
+    session_start();
     include("header.php");
     ?>
     <h2> Register </h2>

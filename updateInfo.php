@@ -1,6 +1,7 @@
 <html>
     <head> <link rel="stylesheet" href="style.css"> </head>
     <?php 
+    session_start();
     include("header.php");
     ?>
 <body>
@@ -30,7 +31,6 @@ if (isset($_GET["userId"])){
 }
 
 if (isset($_POST["updateInfo"])){
-    session_start();
     ?>
     <a href="dashboard.php">Back to Dashboard<br> </a>
 

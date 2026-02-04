@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
     <?php 
+    session_start();
     include("header.php");
     ?>
 </div>

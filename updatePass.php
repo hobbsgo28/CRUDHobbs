@@ -1,6 +1,7 @@
 <html>
     <head> <link rel="stylesheet" href="style.css"> </head>
     <?php 
+    session_start();
     include("header.php");
     ?>
 <body>

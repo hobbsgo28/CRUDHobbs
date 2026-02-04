@@ -9,9 +9,25 @@
 <?php
 $currentPage = basename($_SERVER["PHP_SELF"]);
 
+//check if logged in for certian pages, if not logged in kickback to index
+if (!isset($_SESSION['exists'])) {
+    $_SESSION['exists'] = FALSE;
 
-//check if logged in for certian pages, if not logged in kickback to inde
-//if logged in show logout on all pages
+}
+
+if ($_SESSION["exists"] == TRUE){ 
+  ?>
+    <a href="logoutConfig.php">Logout</a>
+  <?php
+}
+else {
+  ?>
+    <a href="login.php">Login</a>
+  <a href="register.php">Register</a>
+  <?php
+
+}
+
 if ($currentPage == "index.php"){
   ?>
   <a href="login.php">Login</a>
@@ -28,27 +44,19 @@ if ($currentPage == "register.php"){
   <a href="login.php">Login</a>
   <?php
 }
-if ($currentPage == "dashboard.php"){
-  ?>
-  <a href="logoutConfig.php">Logout</a>
-  <?php
-}
 if ($currentPage == "updateInfo.php"){
   ?>
 <a href="dashboard.php">Dashboard</a>
-<a href="logoutConfig.php">Logout</a>
   <?php
 }
 if ($currentPage == "updatePass.php"){
   ?>
 <a href="dashboard.php">Dashboard</a>
-<a href="logoutConfig.php">Logout</a>
   <?php
 }
 if ($currentPage == "removeAcct.php"){
   ?>
 <a href="dashboard.php">Dashboard</a>
-<a href="logoutConfig.php">Logout</a>
   <?php
 }
 ?>
