@@ -29,10 +29,26 @@ if (isset($_GET["msg"])) {
 }
 ?>
 <!-- <a href="logoutConfig.php">Logout <br></a> -->
+
 <?php
+    session_start(); 
+if($_SESSION["accessKey"] == 1) { // normal user access
+    $usersqry = "SELECT id, accessKey, firstName, lastName, emailAddress FROM users WHERE emailAddress=?";
+    $usersqry = $conn->prepare($usersqry);
+    $usersqry->bind_param("s", $_SESSION["emailAddr"]);
 
+} else if($_SESSION["accessKey"] == 2) { // admin user acces
+    $usersqry = "SELECT id, accessKey, firstName, lastName, emailAddress FROM users";
+    $usersqry = $conn->prepare($usersqry);
+        
+} else { // no access
+    header("Location: index.php?msg=14");
+}
+$usersqry->execute();
+$usersqry->store_result();
+
+$usersqry->bind_result($userId, $userKey, $userFName, $userLName, $userEmail);
 ?>
-
 <table> 
     <tr>
         <th>ID</th>
@@ -43,45 +59,8 @@ if (isset($_GET["msg"])) {
         <th>Update Information</th>
         <th>Delete Account</th>
     </tr>
-
 <?php
-    session_start(); 
-if($_SESSION["accessKey"] == 1) {
-    $usersqry = "SELECT id, accessKey, firstName, lastName, emailAddress FROM users WHERE emailAddress=?";
-    $usersqry = $conn->prepare($usersqry);
-    $usersqry->bind_param("s", $_SESSION["emailAddr"]);
     
-    $usersqry->execute();
-    $usersqry->store_result();
-
-    $usersqry->bind_result($userId, $userKey, $userFName, $userLName, $userEmail);
-
-    while ($usersqry->fetch()) {
-?>
-        <tr> 
-            <td> <?php echo $userId ?> </td>
-            <td> <?php echo $userKey ?> </td>
-            <td> <?php echo $userFName  ?> </td>
-            <td> <?php echo $userLName  ?> </td>
-            <td> <?php echo $userEmail ?> </td>
-            <td> <form style="all: unset;" action="updateInfo.php" method="post">
-                <button type="submit" name="updateInfo" >Update Information</button> </form> </td>
-            <td> <form style="all: unset;" action="removeAcct.php?userId=<?=$userId?>" method="post">
-                <button type="submit" name="userId" value="<?= $userId ?>" >Delete Account</button> </form> </td>
-
-        </tr>
-<?php        }         ?>    
-        </table>    
-<?php
-    }
-else if($_SESSION["accessKey"] == 2){
-    $usersqry = "SELECT id, accessKey, firstName, lastName, emailAddress FROM users";
-    $usersqry = $conn->prepare($usersqry);
-        
-    $usersqry->execute();
-    $usersqry->store_result();
-
-    $usersqry->bind_result($userId, $userKey, $userFName, $userLName, $userEmail);
         
     while ($usersqry->fetch()) {
 ?>
@@ -101,9 +80,7 @@ else if($_SESSION["accessKey"] == 2){
 <?php   
 
         }
-?>      </table>  <?php
-    }
-?>
+?>      </table>
 
 </body>
 </html>

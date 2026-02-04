@@ -9,6 +9,8 @@
 <?php
 $currentPage = basename($_SERVER["PHP_SELF"]);
 
+
+//check if logged in for certian pages, if not logged in kickback to index
 if ($currentPage == "index.php"){
   ?>
   <a href="login.php">Login</a>

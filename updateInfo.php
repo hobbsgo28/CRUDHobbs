@@ -55,7 +55,7 @@ session_start();
     $query->store_result();
 
     $query->bind_result($userId, $userKey, $userFName, $userLName, $userEmail);
-
+//condense these loops
         while ($query->fetch()) {
             if( $_SESSION["accessKey"] == 1) {
 ?>

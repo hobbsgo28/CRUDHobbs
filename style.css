@@ -12,3 +12,4 @@ input[type=submit]:hover {background-color: rgba(8, 154, 8, 0.5)}
   font-size: 18px; line-height: 25px; border-radius: 4px; background-color: rgb(228, 225, 225)}
 .header a:hover {background-color: #ddd; color: black;}
 .header-right {float: right;}
+
