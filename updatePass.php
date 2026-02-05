@@ -33,6 +33,8 @@ else {
     $userId = $_POST["userId"];
 }
 
+if (isset($_POST["updatePass"])){
+
 ?>
 
 <table> 
@@ -52,7 +54,14 @@ else {
     </tr>
 
 <?php
+}
+else {
+    header("Location: index.php?msg=14");
 
+}
 ?>
+
+
+
 </body>
 </html>

@@ -76,7 +76,7 @@ $usersqry->bind_result($userId, $userKey, $userFName, $userLName, $userEmail);
             <td> <form style="all: unset;" action="updateInfo.php?userId=<?=$userId?>" method="post">
                 <button type="submit" name="updateInfo" value="<?= $userId ?>" >Update Information</button> </form> </td>
             <td> <form style="all: unset;" action="removeAcct.php?userId=<?=$userId?>" method="post">
-                <button type="submit" name="userId" value="<?= $userId ?>" >Delete Account</button> </form> </td>
+                <button type="submit" name="removeAcct" value="<?= $userId ?>" >Delete Account</button> </form> </td>
         </tr>
 
         

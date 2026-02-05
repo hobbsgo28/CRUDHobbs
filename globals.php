@@ -1,6 +1,7 @@
 <html>
 <body>
 <?php
+include("unauthAccess.php");
 
 $MSG_1 = "Unknown Error Detected<br>";
 $MSG_2 = "Account Successfully Created<br>";
@@ -24,7 +25,6 @@ $MSG_15 = "Logout Successfull<br>";
 // $MSG_20
 // $MSG_21
 // $MSG_22
-
 
 
 ?>

@@ -15,6 +15,8 @@ else {
     $userId = $_POST["userId"];
 }
 
+if (isset($_POST["removeAcct"])){
+
 $usersqry = "SELECT firstName, lastName From users WHERE id=?";
 $usersqry = $conn->prepare($usersqry);
 $usersqry->bind_param("i", $userId);
@@ -30,6 +32,14 @@ $usersqry->bind_result($thisFName, $thisLName);
 
 <form style="all: unset;" action="dashboard.php" method="post">
     <button type="submit" name="userId" value="<?= $userId ?>" >Back to Dashboard</button> </form> <br>
+
+<?php
+}
+else {
+    header("Location: index.php?msg=14");
+
+}
+?>
 
 </head>
 </html>
