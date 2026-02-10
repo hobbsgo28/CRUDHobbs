@@ -22,7 +22,7 @@ if ($_SESSION["exists"] == TRUE){
 
 if ($currentPage == "index.php"){
   ?>
-  <a href="login.php">Login</a>
+  <a id="" href="login.php">Login</a>
   <a href="register.php">Register</a>
   <?php
 }

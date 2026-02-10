@@ -60,15 +60,17 @@ if (isset($_POST["updateInfo"])){
             <tr> 
                 <td> <?php echo $userId ?> </td>
 
-                <form style="all: unset;" action="updateInfoConfig.php" method="post">
+                <form style="all: unset;" name="updateInfo" action="updateInfoConfig.php" method="post">
                 <input type="hidden" name="userId" id="userId" value="<?=$userId?>">
                 <?php
+
                 if( $_SESSION["accessKey"] == 1) {
                 ?>
                     <td> <?php echo "User" ?> <input type="hidden" name="userKey" id="userKey" value="<?=$userKey?>" required> </td>
     <?php }     if($_SESSION["accessKey"] == 2) {       ?>
                     <td> <input type="integer" id="userKey" placeholder="<?=$userKey ?>" value="<?=$userKey ?>" name="userKey" requires> </td>
     <?php              }        ?>
+
                 <td> <input type="text" id="firstName" placeholder="<?=$userFName ?>" value="<?=$userFName ?>" pattern="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z-']+$" name="firstName" required> </td>
 
                 <td> <input type="text" id="lastName" placeholder="<?=$userLName ?>" value="<?=$userLName ?>" pattern="^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z-']+$" name="lastName" required> </td>
