@@ -8,20 +8,12 @@ th {
     background-color: rgb(161, 94, 52); 
     border: 2px solid black; 
     padding: 10px 30px 10px 30px;
-    /* padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 30px;
-    padding-left: 30px; */
     text-align: center;
 } 
 td {
     background-color: aquamarine; 
     border: 2px solid black;
     padding: 10px 30px 10px 30px;
-    /* padding-top: 10px; 
-    padding-bottom: 10px; 
-    padding-right: 30px; 
-    padding-left: 30px; */
     text-align: center; 
 }
 form {
@@ -70,6 +62,34 @@ input[type=submit]:hover {
     float: right;
 }
 
+.container {
+    display: flex;
+    flex-wrap: wrap;     
+}
+
+.column {
+    flex: 0 0 60%;
+    min-width: 250px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    box-sizing: border-box; 
+    border: 1px solid #ccc;
+}
+
+.column-wing {
+    flex: 0 0 20%;
+    min-width: 250px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    box-sizing: border-box; 
+    border: 1px solid #ccc;
+}
+
+
+
 /* 
-body{display: flex; flex-direction: column; align-items: center;
+body{
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
 } */

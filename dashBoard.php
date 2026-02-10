@@ -3,9 +3,19 @@
     <?php 
     session_start();
     include("header.php");
+    include("footer.php");
     ?>
 <body>
 
+<div class="container">
+  <div class="column-wing">
+    <h2>Column 1</h2>
+    <p>This is the first column.</p>
+</div>
+
+  <div class="column">
+    <h2>Column 2</h2>
+    <p>This is the second column.</p>
 <h1> Dashboard </h1>
 
 <?php 
@@ -87,6 +97,12 @@ $usersqry->bind_result($userId, $userKey, $userFName, $userLName, $userEmail);
 
         }
 ?>      </table>
+</div>
 
+<div class="container">
+  <div class="column-wing">
+    <h2>Column 3</h2>
+    <p>This is the third column.</p>
+</div>
 </body>
 </html>

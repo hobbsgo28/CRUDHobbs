@@ -1,3 +1,4 @@
+<body>
 <div class="header">
   <a href="index.php">CRUD</a>
   <div class="header-right">
@@ -43,3 +44,4 @@ if ($currentPage == "globals.php"){
 
   </div>
 </div>
+</body>

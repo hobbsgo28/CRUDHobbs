@@ -6,6 +6,14 @@
     ?>
 <body>
 
+<div class="container">
+  <div class="column-wing">
+</div>
+
+  <div class="column">
+
+<h1> Dashboard </h1>
+
 <?php
 include("globals.php");
 
@@ -46,6 +54,11 @@ if (isset($_GET["msg"])) {
 
 </form>
 
+</div>
+
+<div class="container">
+  <div class="column-wing">
+</div>
 
 </body>
 </html>

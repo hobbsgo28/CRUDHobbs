@@ -5,6 +5,13 @@
     session_start();
     include("header.php");
     ?>
+
+<div class="container">
+  <div class="column-wing">
+</div>
+
+  <div class="column">
+
     <h2> Register </h2>
 <br>
 
@@ -33,5 +40,11 @@ if (isset($_GET["msg"])) {
 
 </form>
 
+
+</div>
+
+<div class="container">
+  <div class="column-wing">
+</div>
 </body>
 </html>
