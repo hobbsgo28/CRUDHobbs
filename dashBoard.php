@@ -3,7 +3,6 @@
     <?php 
     session_start();
     include("header.php");
-    include("footer.php");
     ?>
 <body>
 
@@ -98,5 +97,8 @@ $usersqry->bind_result($userId, $userKey, $userFName, $userLName, $userEmail);
   <div class="column-wing">
 
 </div>
+<?php
+include("footer.php");
+?>
 </body>
 </html>

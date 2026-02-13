@@ -46,5 +46,9 @@ if (isset($_GET["msg"])) {
 <div class="container">
   <div class="column-wing">
 </div>
+
+<?php
+include("footer.php");
+?>
 </body>
 </html>

@@ -103,9 +103,19 @@ input[type=submit]:hover {
 }
 
 body {
-background-image: url(https://t3.ftcdn.net/jpg/02/75/77/32/360_F_275773204_aXqXOTyGYDQh0A25oW8tAIafBHq7UJ4u.jpg);
-background-attachment: fixed;
-background-color: rgb(0, 0, 0);
+    background-image: url(https://t3.ftcdn.net/jpg/02/75/77/32/360_F_275773204_aXqXOTyGYDQh0A25oW8tAIafBHq7UJ4u.jpg);
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-color: rgb(0, 0, 0);
+}
+.footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 /* 
