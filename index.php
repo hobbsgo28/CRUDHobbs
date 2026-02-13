@@ -13,6 +13,9 @@
 </div>
 
 <body>
+    <?php
+include("footer.php");
+?>
     <div class="container">
   <div class="column-wing">
 
@@ -59,8 +62,6 @@ if (isset($_GET["msg"])) {
 </div>
 
 
-<?php
-include("footer.php");
-?>
+
 </body>
 </html>

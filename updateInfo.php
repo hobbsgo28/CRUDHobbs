@@ -11,6 +11,7 @@
 <?php
 include("globals.php");
 include("connection.php");
+include("footer.php");
 
 if (isset($_GET["msg"])) {
     switch ($_GET["msg"]) {
@@ -96,8 +97,6 @@ else {
 </div>
 </div>
 
-<?php
-include("footer.php");
-?>
+
 </body>
 </html>

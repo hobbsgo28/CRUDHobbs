@@ -3,6 +3,7 @@
     <?php 
     session_start();
     include("header.php");
+    include("footer.php");
     ?>
 <body>
 <?php
@@ -61,9 +62,5 @@ else {
 }
 ?>
 
-
-<?php
-include("footer.php");
-?>
 </body>
 </html>

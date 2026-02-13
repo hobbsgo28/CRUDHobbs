@@ -4,6 +4,7 @@
     <?php 
     session_start();
     include("header.php");
+    include("footer.php");
     ?>
 
 <div class="container">
@@ -46,9 +47,5 @@ if (isset($_GET["msg"])) {
 <div class="container">
   <div class="column-wing">
 </div>
-
-<?php
-include("footer.php");
-?>
 </body>
 </html>
