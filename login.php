@@ -10,9 +10,7 @@
   <div class="column-wing">
 </div>
 
-  <div class="column">
-
-<h1> Dashboard </h1>
+  <div class="column-1">
 
 <?php
 include("globals.php");

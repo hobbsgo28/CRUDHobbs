@@ -13,6 +13,12 @@
 </div>
 
 <body>
+    <div class="container">
+  <div class="column-wing">
+
+</div>
+
+  <div class="column-1">
 <?php
 include("globals.php");
 
@@ -39,11 +45,17 @@ if (isset($_GET["msg"])) {
 
 
 
+
 <h2> Welcome to my CRUD </h2>
 
 <?php 
 
 ?> 
+</div>
 
+<div class="container">
+  <div class="column-wing">
+
+</div>
 </body>
 </html>

@@ -10,7 +10,7 @@
   <div class="column-wing">
 </div>
 
-  <div class="column">
+  <div class="column-1">
 
     <h2> Register </h2>
 <br>

@@ -6,6 +6,8 @@
     ?>
 <body>
 
+<div class="container">
+  <div class="column-2">
 <?php
 include("globals.php");
 include("connection.php");
@@ -32,7 +34,7 @@ if (isset($_GET["userId"])){
 
 if (isset($_POST["updateInfo"])){
     ?>
-    <a href="dashboard.php">Back to Dashboard<br> </a>
+    <!-- <a href="dashboard.php">Back to Dashboard<br> </a> -->
 
     <table> 
         <tr>
@@ -91,6 +93,7 @@ else {
 }
 ?>
 </table>
-
+</div>
+</div>
 </body>
 </html>

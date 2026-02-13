@@ -67,25 +67,46 @@ input[type=submit]:hover {
     flex-wrap: wrap;     
 }
 
-.column {
+.column-1 {
+    display:flex;
     flex: 0 0 60%;
     min-width: 250px;
     background-color: #f2f2f2;
     padding: 20px;
     box-sizing: border-box; 
     border: 1px solid #ccc;
+    align-items: center;
+    flex-direction: column;
 }
 
 .column-wing {
+    display:flex;
     flex: 0 0 20%;
+    min-width: 250px;
+    background-color: rgba(0, 0, 0, 0);  
+    padding: 20px;
+    box-sizing: border-box; 
+    /* border: 1px solid #ccc; */
+    align-items: center;
+    flex-direction: column;
+}
+
+.column-2 {
+    display:flex;
     min-width: 250px;
     background-color: #f2f2f2;
     padding: 20px;
     box-sizing: border-box; 
     border: 1px solid #ccc;
+    align-items: center;
+    flex-direction: column;
 }
 
-
+body {
+background-image: url(https://t3.ftcdn.net/jpg/02/75/77/32/360_F_275773204_aXqXOTyGYDQh0A25oW8tAIafBHq7UJ4u.jpg);
+background-attachment: fixed;
+background-color: rgb(0, 0, 0);
+}
 
 /* 
 body{
