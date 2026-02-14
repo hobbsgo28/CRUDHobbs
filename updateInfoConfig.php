@@ -1,7 +1,7 @@
 <?php
 include("connection.php");
 
-if(isset($_POST["updateInfo"])) {
+if(isset($_POST["updateInfoConfig"])) {
     $userId = $_POST["userId"];
     $userKey = $_POST["userKey"];
     $fName = $_POST["firstName"];

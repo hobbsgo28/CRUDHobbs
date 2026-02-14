@@ -63,7 +63,7 @@ if (isset($_POST["updateInfo"])){
             <tr> 
                 <td> <?php echo $userId ?> </td>
 
-                <form style="all: unset;" name="updateInfo" action="updateInfoConfig.php" method="post">
+                <form style="all: unset;" name="updateInfoConfig" action="updateInfoConfig.php" method="post">
                 <input type="hidden" name="userId" id="userId" value="<?=$userId?>">
                 <?php
 
@@ -80,7 +80,7 @@ if (isset($_POST["updateInfo"])){
 
                 <td> <input type="email" id="emailAddress" placeholder="<?=$userEmail ?>" value="<?=$userEmail ?>" name="emailAddress" required> </td>
                 
-                <td> <button type="submit"  name="updateInfo" value="<?= $userId ?>" >Update Information</button> </form> </td>
+                <td> <button type="submit"  name="updateInfoConfig" value="<?= $userId ?>" >Update Information</button> </form> </td>
 
                 <td> <form style="all: unset;" action="updatePass.php?userId=<?=$userId?>&emailAddr=<?=$userEmail?>" method="post">
                     <button type="submit" name="updatePass" value="<?= $userId ?>" >Update Password</button> </form> </td>

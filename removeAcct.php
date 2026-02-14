@@ -7,6 +7,11 @@
     include("connection.php");
     include("footer.php");
 ?>
+<div class="container">
+  <div class="column-wing">
+</div>
+
+  <div class="column-1">
 
 <?php
 if (isset($_GET["userId"])) {
@@ -42,5 +47,10 @@ else {
 }
 ?>
 
+</div>
+
+<div class="container">
+  <div class="column-wing">
+</div>
 </head>
 </html>

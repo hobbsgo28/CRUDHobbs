@@ -13,7 +13,7 @@ else {
 }
 
 
-if(isset($_POST["updatePass"])){
+if(isset($_POST["updatePassConfig"])){
     $pass = $_POST["pass"];
     $newPass = $_POST["newPass"];
 

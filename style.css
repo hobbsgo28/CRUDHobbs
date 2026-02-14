@@ -5,16 +5,19 @@ table {
     justify-content: center; 
 }
 th {
-    background-color: rgb(161, 94, 52); 
+    background-color:burlywood;
     border: 2px solid black; 
     padding: 10px 30px 10px 30px;
     text-align: center;
+    border-radius: 5px;
 } 
 td {
-    background-color: aquamarine; 
+    background-color: rgb(165, 195, 205); 
     border: 2px solid black;
     padding: 10px 30px 10px 30px;
     text-align: center; 
+    border-radius: 5px;
+
 }
 form {
     border-radius: 5px;
@@ -30,6 +33,8 @@ form {
 input {
     display: inline-block; 
     width: 100%; 
+    border-radius: 5px;
+    padding: 3px;
     /* margin: 5px */
 }
 
@@ -39,6 +44,13 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: rgba(8, 154, 8, 0.5)
 }
+button{
+    background-color:white;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
 .header {
     overflow: hidden; 
     background-color: #f1f1f1; 
@@ -55,8 +67,9 @@ input[type=submit]:hover {
     text-decoration: none;
     font-size: 18px; 
     line-height: 25px; 
-    border-radius: 4px; 
-    background-color: rgb(228, 225, 225)
+    border-radius: 5px; 
+    background-color: rgb(228, 225, 225);
+    margin-right:5px;
 }
 .header a:hover {
     background-color: #ddd; 
@@ -68,7 +81,8 @@ input[type=submit]:hover {
 
 .container {
     display: flex;
-    flex-wrap: wrap;     
+    flex-wrap: wrap;
+    justify-content: center;  
 }
 
 .column-1 {
@@ -83,18 +97,25 @@ input[type=submit]:hover {
     border-radius: 5px;
     align-items: center;
     flex-direction: column;
+    /* height: 100%;    */
+
 }
 
 .column-wing {
     display:flex;
     flex: 0 0 20%;
     min-width: 250px;
-    background-color: rgba(0, 0, 0, 0);  
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    /* background-color: rgba(0, 0, 0, 0);   */
     padding: 20px;
     box-sizing: border-box; 
     /* border: 1px solid #ccc; */
     align-items: center;
     flex-direction: column;
+    /* height: 100%;    */
+
 }
 
 .column-2 {
@@ -103,6 +124,7 @@ input[type=submit]:hover {
     background-color: #f2f2f2;
     padding: 20px;
     box-sizing: border-box; 
+    border-radius: 5px;
     border: 1px solid #ccc;
     align-items: center;
     flex-direction: column;

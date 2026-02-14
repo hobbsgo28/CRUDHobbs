@@ -6,6 +6,12 @@
     include("footer.php");
     ?>
 <body>
+    <div class="container">
+  <div class="column-wing">
+</div>
+
+  <div class="column-1">
+<h2>Change Password</h2>
 <?php
 
 include("globals.php");
@@ -49,7 +55,7 @@ if (isset($_POST["updatePass"])){
     <td> <input type="hidden" name="userId" value="<?php=$userId?>" > <?php echo $userId ?>  </td>
     <td> <input type="password" name="newPass" placeholder="abcABC123!@#" id="newPass"
     pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$" required> </td>
-    <td> <button type="submit" name="updatePass">Update </td>
+    <td> <button type="submit" name="updatePassConfig">Update </td>
     </form>
 
     </tr>
@@ -61,6 +67,12 @@ else {
 
 }
 ?>
+
+
+</div>
+
+<div class="column-wing">
+</div>
 
 </body>
 </html>

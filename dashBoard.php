@@ -6,12 +6,15 @@
     include("footer.php");
     ?>
 <body>
-
+<!-- 
 <div class="container">
   <div class="column-wing">
 </div>
 
-  <div class="column-1">
+  <div class="column-1"> -->
+
+  <div class="container">
+  <div class="column-2">
 <h1> Dashboard </h1>
 
 <?php 
@@ -93,11 +96,13 @@ $usersqry->bind_result($userId, $userKey, $userFName, $userLName, $userEmail);
 
         }
 ?>      </table>
-</div>
+<!-- </div>
 
   <div class="column-wing">
 
-</div>
+</div> -->
 
+</div>
+</div>
 </body>
 </html>
