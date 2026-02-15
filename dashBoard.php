@@ -104,5 +104,6 @@ $usersqry->bind_result($userId, $userKey, $userFName, $userLName, $userEmail);
 
 </div>
 </div>
+
 </body>
 </html>

@@ -4,17 +4,14 @@
     session_start();
     include("header.php");
     include("footer.php");
+    include("globals.php");
     ?>
 <body>
-    <div class="container">
-  <div class="column-wing">
-</div>
 
-  <div class="column-1">
+  <div class="container">
+  <div class="column-2">
 <h2>Change Password</h2>
 <?php
-
-include("globals.php");
 
 if (isset($_GET["msg"])) {
     switch ($_GET["msg"]) {
@@ -68,11 +65,7 @@ else {
 }
 ?>
 
-
 </div>
-
-<div class="column-wing">
 </div>
-
 </body>
 </html>
